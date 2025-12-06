@@ -18,5 +18,10 @@ describe('AppController', () => {
     it('should return "Hello World!"', () => {
       expect(appController.getHello()).toBe('Hello World!');
     });
+
+    it('should return "Hello World!"', () => {
+      const testName = 'testName';
+      expect(appController.getHello(testName)).toBe('Hello testName!');
+    });
   });
 });
