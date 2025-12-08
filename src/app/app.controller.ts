@@ -1,12 +1,10 @@
-import { Controller, Get, Query } from '@nestjs/common';
-import { AppService } from '../services/app.service';
+import { Controller, Get, Redirect } from '@nestjs/common';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor() {}
 
   @Get()
-  getHello(@Query('name') name?: string): string {
-    return this.appService.getHello(name);
-  }
+  @Redirect('/api', 301)
+  redirectToApiDocs() {}
 }
